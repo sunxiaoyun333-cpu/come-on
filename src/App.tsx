@@ -24,6 +24,7 @@ import {
   Eye,
   X
 } from 'lucide-react';
+// @ts-ignore
 import myAvatar from './avatar.jpg';
 
 // --- Components ---
