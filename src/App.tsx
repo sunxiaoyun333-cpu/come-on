@@ -24,6 +24,7 @@ import {
   Eye,
   X
 } from 'lucide-react';
+import myAvatar from './avatar.jpg';
 
 // --- Components ---
 
@@ -338,7 +339,7 @@ export default function App() {
             />
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-white/80 shadow-2xl overflow-hidden relative z-10">
               <img 
-                src={resumeImage || "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"} 
+                src={resumeImage || myAvatar} 
                 alt="Avatar" 
                 className="w-full h-full object-cover bg-teal-50"
                 referrerPolicy="no-referrer"
@@ -561,124 +562,4 @@ export default function App() {
               <div>
                 <h3 className="text-3xl font-black text-slate-900 mb-2">成都外国语学院</h3>
                 <p className="text-xl text-teal-600 font-bold">翻译专业 · 本科 (25 届)</p>
-                <p className="text-slate-500 mt-2 font-medium">秉持“好奇心与共情力驱动创造力”的跨界理念。</p>
-              </div>
-            </div>
-            <div className="text-center md:text-right">
-              <div className="bg-white/80 px-6 py-3 rounded-2xl shadow-sm border border-white mb-3">
-                <span className="text-slate-500 font-bold">2021 - 2025</span>
-              </div>
-              <div className="flex flex-wrap justify-center md:justify-end gap-2">
-                {["TEM-8", "TEM-4", "CET-6"].map(cert => (
-                  <span key={cert} className="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-xs font-black border border-emerald-100">
-                    {cert}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </GlassCard>
-        </section>
-
-        {/* About & Contact Section */}
-        <section id="contact" className="mb-20 scroll-mt-32">
-          <SectionHeading icon="☀️">关于与联系</SectionHeading>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <GlassCard className="lg:col-span-1">
-              <h3 className="text-2xl font-black text-slate-900 mb-8">个性标签</h3>
-              <div className="flex flex-wrap gap-4">
-                {["AI Native 🚀", "重度 Vibe Coder 💻", "英语大拿 🎓", "咖啡探索者 ☕", "猫奴 🐈"].map(tag => (
-                  <span key={tag} className="px-5 py-2 bg-white/80 rounded-full text-sm font-bold shadow-sm border border-white">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </GlassCard>
-            
-            <GlassCard className="lg:col-span-2">
-              <div className="flex flex-col md:flex-row gap-12">
-                <div className="flex-1">
-                  <h3 className="text-3xl font-black text-slate-900 mb-6">向我打招呼 👋</h3>
-                  <p className="text-slate-500 mb-10 leading-relaxed text-lg">
-                    我目前正在寻找新的机会。如果你有任何有趣的项目或想法，欢迎随时联系我！让我们一起通过 AI 创造清透且有生命力的数字产品。
-                  </p>
-                  
-                  <div className="flex gap-6">
-                    <motion.a 
-                      whileHover={{ y: -8, scale: 1.1 }} 
-                      href="https://github.com" 
-                      target="_blank"
-                      className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg text-teal-500 border border-white hover:shadow-teal-200/50 transition-all"
-                    >
-                      <Github size={32} />
-                    </motion.a>
-                    <motion.a 
-                      whileHover={{ y: -8, scale: 1.1 }} 
-                      href="https://linkedin.com" 
-                      target="_blank"
-                      className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg text-teal-600 border border-white hover:shadow-teal-200/50 transition-all"
-                    >
-                      <Linkedin size={32} />
-                    </motion.a>
-                    <motion.a 
-                      whileHover={{ y: -8, scale: 1.1 }} 
-                      href="mailto:sunxiaoyun333@gmail.com" 
-                      className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg text-orange-400 border border-white hover:shadow-orange-200/50 transition-all"
-                    >
-                      <Mail size={32} />
-                    </motion.a>
-                  </div>
-                </div>
-                
-                <div className="flex-1 flex flex-col justify-center">
-                  <RippleButton 
-                    onClick={() => window.location.href = 'mailto:sunxiaoyun333@gmail.com'}
-                    className="bg-teal-500 text-white shadow-2xl shadow-teal-200 py-6 text-xl mb-6"
-                  >
-                    发送邮件给我 🍋
-                  </RippleButton>
-                  <p className="text-center text-slate-400 font-bold tracking-wider">sunxiaoyun333@gmail.com</p>
-                </div>
-              </div>
-            </GlassCard>
-          </div>
-        </section>
-
-      {/* Scroll to Top */}
-      <AnimatePresence>
-        {isScrolled && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-10 right-10 z-[60] w-14 h-14 bg-white/80 backdrop-blur-md border border-white rounded-2xl shadow-xl flex items-center justify-center text-teal-500 hover:text-teal-600 transition-colors"
-          >
-            <ChevronRight className="-rotate-90" size={28} />
-          </motion.button>
-        )}
-      </AnimatePresence>
-
-      <footer className="pt-20 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400 font-bold">
-          <p>© 2026 孙晓云. 保持清透，保持热爱。🌿</p>
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-2 hover:text-teal-500 transition-colors cursor-pointer"><Coffee size={18} /> 请我喝咖啡</div>
-            <div className="flex items-center gap-2 hover:text-rose-400 transition-colors cursor-pointer"><Heart size={18} /> 开放合作</div>
-          </div>
-        </footer>
-
-        {/* Modal for Resume Preview */}
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          {resumeImage ? (
-            <img src={resumeImage} alt="Resume Preview" className="max-w-full h-auto rounded-xl shadow-lg" />
-          ) : (
-            <div className="p-20 text-slate-400 flex flex-col items-center gap-4">
-              <Upload size={48} />
-              <p>尚未上传简历图片</p>
-            </div>
-          )}
-        </Modal>
-      </main>
-    </div>
-  );
-}
+                <p className="text-slate
